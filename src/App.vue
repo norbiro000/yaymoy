@@ -1,14 +1,17 @@
 <template>
   <div id="app">
-    <router-view/>
-    <Footer></Footer>
+    <v-header></v-header>
+    <router-view class="content" />
+    <NavigatorFooter></NavigatorFooter>
   </div>
 </template>
 <script>
-import Footer from '@/components/MainLayout/Footer'
+import vHeader from '@/components/MainLayout/Header'
+import NavigatorFooter from '@/components/MainLayout/NavigatorFooter'
 export default {
   components: {
-    Footer
+    vHeader,
+    NavigatorFooter
   }
 }
 </script>
