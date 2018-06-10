@@ -2,10 +2,10 @@
   <section class="section">
     <div class="container">
       <h1 class="title">
-        Home
+        สวัสดี
       </h1>
       <p class="subtitle">
-        Home
+        กินข้าวไป สะสมแต้มไปกันดีว่า
       </p>
     </div>
   </section>
