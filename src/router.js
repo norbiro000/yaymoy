@@ -4,6 +4,8 @@ import Home from './views/Home.vue'
 import Promotion from './views/Promotion.vue'
 import Transaction from './views/Transaction'
 import Me from './views/Me'
+import callback from '@/components/Authen/callback'
+import Login from '@/components/Authen/login'
 
 Vue.use(Router)
 
@@ -28,6 +30,16 @@ export default new Router({
       path: '/me',
       name: 'me',
       component: Me
+    },
+    {
+      path: '/callback',
+      name: 'callback',
+      component: callback
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     }
   ]
 })

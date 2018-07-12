@@ -9,7 +9,9 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "aws-sdk": "^2.254.1",
     "bulma": "^0.7.1",
+    "jwt-decode": "^2.2.0",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
