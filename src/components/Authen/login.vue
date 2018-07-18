@@ -3,13 +3,11 @@
 </template>
 
 <script>
-import { AUTH_PATH } from '../../config'
+import auth from '@/services/auth'
+
 export default {
-  created () {
-    setTimeout(function () {
-      // window.location = AUTH_PATH
-      alert(AUTH_PATH)
-    }, 2000)
+  mounted () {
+    auth.authenticate('Facebook')
   }
 }
 </script>

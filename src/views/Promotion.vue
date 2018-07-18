@@ -9,7 +9,7 @@
       </p>
     </div>
     <hr>
-    <PromotionsCard v-for="i in 1" :key="i"
+    <PromotionsCard v-for="i in 10" :key="i"
       :title="'ขนมจีน หลัง ม.อ.'"
       :img="'https://www.cpbrandsite.com/contents/recipe/h84kygu5qngpv0xdl3tqcomtbuqllzy0tsqqzuzv.jpg'">
     </PromotionsCard>

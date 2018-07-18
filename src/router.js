@@ -6,10 +6,12 @@ import Transaction from './views/Transaction'
 import Me from './views/Me'
 import callback from '@/components/Authen/callback'
 import Login from '@/components/Authen/login'
+import ErrorPage from '@/pages/error'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -40,6 +42,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/error',
+      name: 'error',
+      component: ErrorPage
     }
   ]
 })

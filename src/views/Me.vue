@@ -1,19 +1,13 @@
 <template>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">
-        ตั้งค่าโปรไฟล์
-      </h1>
-      <p class="subtitle">
-        ของคุณ มีอะไรบ้าง
-      </p>
-    </div>
-  </section>
+  <UserProfile></UserProfile>
 </template>
 
 <script>
+import UserProfile from '@/components/UserProfile'
 export default {
-
+  components: {
+    UserProfile
+  }
 }
 </script>
 
