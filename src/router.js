@@ -8,6 +8,7 @@ import Me from './views/Me'
 import callback from '@/components/Authen/callback'
 import Login from '@/components/Authen/login'
 import Logout from '@/components/Authen/logout'
+import Privacy from '@/pages/privacy'
 import ErrorPage from '@/pages/error'
 
 Vue.use(Router)
@@ -60,6 +61,11 @@ export default new Router({
       path: '/logout',
       name: 'logout',
       component: Logout
+    },
+    {
+      path: '/privacy',
+      name: 'privacy',
+      component: Privacy
     },
     {
       path: '/error',

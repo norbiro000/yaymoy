@@ -1,7 +1,7 @@
 <template>
 <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
   <p class="heading is-1 is-left">Promotion</p>
-  <p class="heading is-1 is-right">My Points {{ myPoint }}</p>
+  <p class="heading is-1 is-right" @click="$router.push('logout')"><a>Logout</a></p>
 </nav>
 </template>
 
