@@ -5,7 +5,7 @@
 <script>
 export default {
   created () {
-    this.$store.dispatch('logout')
+    this.$store.dispatch('signout')
   }
 }
 </script>

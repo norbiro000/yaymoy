@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <v-header></v-header>
+    <v-header v-if="this.$store.getters['isAuthenticated']"></v-header>
     <router-view class="content" />
-    <NavigatorFooter></NavigatorFooter>
+    <NavigatorFooter v-if="this.$store.getters['isAuthenticated']"></NavigatorFooter>
   </div>
 </template>
 <script>
@@ -22,5 +22,12 @@ html, body, {
   padding: 0;
   margin: 0;
   background: $colorMainForground;
+}
+
+#btn-login {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 80%;
 }
 </style>

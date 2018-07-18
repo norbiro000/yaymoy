@@ -1,14 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from './store'
 import Home from './views/Home.vue'
 import Promotion from './views/Promotion.vue'
 import Transaction from './views/Transaction'
 import Me from './views/Me'
 import callback from '@/components/Authen/callback'
 import Login from '@/components/Authen/login'
+import Logout from '@/components/Authen/logout'
 import ErrorPage from '@/pages/error'
 
 Vue.use(Router)
+
+function requiredAuth (to, from, next) {
+  if (store.getters.isAuthenticated) {
+    next()
+  } else {
+    next('/')
+  }
+}
 
 export default new Router({
   mode: 'history',
@@ -21,17 +31,20 @@ export default new Router({
     {
       path: '/about',
       name: 'promotion',
-      component: Promotion
+      component: Promotion,
+      beforeEnter: requiredAuth
     },
     {
       path: '/transaction',
       name: 'transaction',
-      component: Transaction
+      component: Transaction,
+      beforeEnter: requiredAuth
     },
     {
       path: '/me',
       name: 'me',
-      component: Me
+      component: Me,
+      beforeEnter: requiredAuth
     },
     {
       path: '/callback',
@@ -44,9 +57,19 @@ export default new Router({
       component: Login
     },
     {
+      path: '/logout',
+      name: 'logout',
+      component: Logout
+    },
+    {
       path: '/error',
       name: 'error',
       component: ErrorPage
+    },
+    {
+      path: '*',
+      name: 'not found',
+      component: Home
     }
   ]
 })

@@ -2,16 +2,17 @@
 <div class=" user__profile">
   <div class="">
     <div>
-      <b>{{ name }}</b>
+      <b>{{ profile.name }}</b>
+      <b>{{ profile.picture }}
     </div>
     <div>
     <p>
-      <span class="icon"><i class="fas fa-envelope"></i></span>{{ email }}
+      <span class="icon"><i class="fas fa-envelope"></i></span>{{ profile.email }}
     </p>
     </div>
     <div>
     <p>
-      <span class="icon"><i class="fas fa-phone"></i></span>{{ telephone }}
+      <span class="icon"><i class="fas fa-phone"></i></span>
     </p>
     </div>
   </div>
@@ -25,6 +26,11 @@ export default {
       name: 'Jakkapan Thongkum',
       email: 'jakkapan@appsolutesoft.com',
       telephone: '096-638-0808'
+    }
+  },
+  computed: {
+    profile () {
+      return this.$store.getters['profile']
     }
   }
 }

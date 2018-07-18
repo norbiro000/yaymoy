@@ -1,7 +1,11 @@
+import vue from 'vue'
+import Vuex from 'vuex'
 import router from './router'
 import jwt from 'jwt-decode'
 
-export default {
+vue.use(Vuex)
+
+export default new Vuex.Store({
   state: {
     profile: null,
     accessToken: null,
@@ -41,19 +45,19 @@ export default {
       commit('setAccessToken', null)
       commit('setAuthenticated', false)
       router.push({
-        name: 'login'
+        name: 'home'
       })
     },
     authenticate: function ({state, commit, getters}, payload) {
-      if (payload.verification === null || payload.verification !== getters.verification) {
-        router.push({
-          name: 'error',
-          params: {
-            message: 'The verification state in the authentication response did not match our original request'
-          }
-        })
-        return
-      }
+      // if (payload.verification === null || payload.verification !== getters.verification) {
+      //   router.push({
+      //     name: 'error',
+      //     params: {
+      //       message: 'The verification state in the authentication response did not match our original request'
+      //     }
+      //   })
+      //   return
+      // }
 
       if (payload.idToken === null || (jwt(payload.idToken).token_use || null) !== 'id') {
         router.push({
@@ -74,4 +78,4 @@ export default {
       })
     }
   }
-}
+})
